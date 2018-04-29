@@ -30,6 +30,19 @@ const gqlQuery = {
             }
         }
         `;
+    },
+    fetchSongDetail: () =>{
+        return gql`
+            query SongDetail($id: ID!){
+                song(id: $id){
+                    id
+                    title
+                    lyrics{
+                        content
+                    }
+                }
+            }
+        `;
     }
 }
 
