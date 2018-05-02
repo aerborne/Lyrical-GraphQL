@@ -38,8 +38,34 @@ const gqlQuery = {
                     id
                     title
                     lyrics{
+                        id
                         content
+                        likes
                     }
+                }
+            }
+        `;
+    },
+    addLyricToSong: ()=>{
+        return gql`
+            mutation AddLyric($content: String!, $songid: ID!){
+                addLyricToSong(content: $content, songId:$songid){
+                    id
+                    lyrics{
+                        id
+                        content
+                        likes
+                    }
+                }
+            }
+        `;
+    },
+    likeLyric: ()=>{
+        return gql`
+            mutation LikeLyric($id: ID){
+                likeLyric(id: $id){
+                    id,
+                    likes
                 }
             }
         `;

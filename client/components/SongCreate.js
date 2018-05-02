@@ -26,7 +26,6 @@ class SongCreate extends Component{
         alert('song added');
     }
     render(){
-        console.log(this.props.data.songs)
         return (
             <div>
                 <Link to="/">
